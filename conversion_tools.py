@@ -17,4 +17,4 @@ def jacobian(polar_state):
 def new_jacobian(state): # comes in as 4x1 vector - [x, y, v_x, v_y].T
     xsq_plus_ysq = state[0]**2 + state[1]**2
     return np.array([[state[0]/np.sqrt(xsq_plus_ysq), state[1]/np.sqrt(xsq_plus_ysq), 0, 0],
-                     [-state[1]/xsq_plus_ysq, -state[0]/xsq_plus_ysq, 0, 0]])
+                     [-state[1]/xsq_plus_ysq, state[0]/xsq_plus_ysq, 0, 0]])
